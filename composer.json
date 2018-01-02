@@ -16,6 +16,7 @@
             "email": "dandi@redbuzz.co.id"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.5.9",
         "illuminate/support": "~5.0"
