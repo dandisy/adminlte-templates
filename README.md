@@ -1,6 +1,8 @@
 AdminLTE templates for Webcore Laravel Generator
 ================================================
 
+For https://github.com/dandisy/webcore
+
 This package based on https://github.com/InfyOmLabs/adminlte-templates
 
 Installation steps are located [here](http://labs.infyom.com/laravelgenerator/docs/master/adminlte-templates)
