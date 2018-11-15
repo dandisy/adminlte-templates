@@ -1,5 +1,5 @@
-AdminLTE templates for Webcore Laravel Generator
-================================================
+AdminLTE templates for Webcore
+==============================
 
 For https://github.com/dandisy/webcore
 
