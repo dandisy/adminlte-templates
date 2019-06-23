@@ -68,6 +68,3 @@
 @push('vue-styles')
     <link rel="stylesheet" href="/app/css/vue-styles.css">
 @endpush
-
-
-

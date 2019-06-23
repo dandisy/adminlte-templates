@@ -17,7 +17,7 @@ $FIELDS$
             $('.empty-data').hide();
         }
 
-        // TODO: you must edit these related input fields (input type, option and default value)
+        // TODO: edit these related input fields (input type, option and default value)
         var inputForm = '';
         var fields = $(this).data('fields').split(',');
         // $.each(fields, function(idx, field) {

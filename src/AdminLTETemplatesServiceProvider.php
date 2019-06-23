@@ -23,5 +23,6 @@ class AdminLTETemplatesServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        //
     }
 }
