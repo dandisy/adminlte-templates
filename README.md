@@ -10,7 +10,7 @@ Installation steps are located [here](http://labs.infyom.com/laravelgenerator/do
 Note :
 for more generic if any artisan command use generate instead infyom
 
-### Usage (if manually added this package in composer vendor)
+### Usage (if this package is installed manually)
 
 1. add autoload classmap in composer.json
 
