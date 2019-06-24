@@ -14,6 +14,20 @@ class AdminLTETemplatesServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__.'/../views', 'adminlte-templates');
+
+        /**
+         * Publish templates assets
+         */
+        $this->publishes([
+            __DIR__.'/public' => public_path(),
+        ], 'public');
+
+        /**
+         * Publish templates views
+         */
+        $this->publishes([
+            __DIR__.'/views' => base_path('resources/views'),
+        ], 'views');
     }
 
     /**
@@ -23,6 +37,5 @@ class AdminLTETemplatesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 }

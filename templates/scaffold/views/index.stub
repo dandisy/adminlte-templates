@@ -18,7 +18,9 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                    @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.table')
+                @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.table')
+
+                $PAGINATE$
             </div>
         </div>
     </div>
@@ -46,3 +48,4 @@
         </div>
     </div>--}}
 @endsection
+
