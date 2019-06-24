@@ -1,3 +1,5 @@
 <div class="row">
-    {!! $records->render() !!}
+    <div class="col-sm-12">
+        {!! $records->render() !!}
+    </div>
 </div>
