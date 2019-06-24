@@ -16,15 +16,19 @@ for more generic if any artisan command use generate instead infyom
 
     {
         . . .
-
         "autoload": {
             "classmap": [
                 . . .
-
                 "vendor/dandisy"
             ],
-
             . . .
 
 2. register this package in config/app.php
+
+    /*
+    * Package Service Providers...
+    */
+    . . .    
+    Webcore\ElmerTemplates\ElmerTemplatesServiceProvider::class,
+
 3. composer dump-autoload
