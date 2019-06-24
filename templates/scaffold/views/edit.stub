@@ -6,7 +6,7 @@
             $MODEL_NAME_HUMAN$
         </h1>
 
-        @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.version')
+        {{--@include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.version')--}}
    </section>
    <div class="content">
        @include('adminlte-templates::common.errors')

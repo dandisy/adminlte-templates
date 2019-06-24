@@ -5,6 +5,8 @@
         <h1>
             $MODEL_NAME_HUMAN$
         </h1>
+        
+        {{--@include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.version')--}}
     </section>
     <div class="content">
         <div class="box box-primary">
