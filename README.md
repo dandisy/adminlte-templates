@@ -20,7 +20,7 @@ for more generic if any artisan command use generate instead infyom
 
     or
 
-    php artisan vendor:publish --provider="Webcore\AdminLTETemplates\AdminLTETemplatesServiceProvider" --tag="viewa-all"
+    php artisan vendor:publish --provider="Webcore\AdminLTETemplates\AdminLTETemplatesServiceProvider" --tag="views-all"
 
 ### Usage (if this package is installed manually)
 
@@ -28,6 +28,7 @@ for more generic if any artisan command use generate instead infyom
 
 1. add autoload classmap in composer.json
 
+```
     {
         . . .
         "autoload": {
@@ -36,14 +37,17 @@ for more generic if any artisan command use generate instead infyom
                 "vendor/dandisy"
             ],
             . . .
+```
 
 2. register this package in config/app.php
 
+```
     /*
     * Package Service Providers...
     */
     . . .    
     Webcore\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
+```
 
 3. composer dump-autoload
 4. publish the templates package to webcore project
@@ -52,6 +56,7 @@ for more generic if any artisan command use generate instead infyom
 
 5. ubah configurasi templates di file config/webcore/laravel_generator.php ke elmer-templates
 
+```
     /*
     |--------------------------------------------------------------------------
     | Templates
@@ -60,3 +65,4 @@ for more generic if any artisan command use generate instead infyom
     */
 
     'templates'         => 'adminlte-templates',
+```
