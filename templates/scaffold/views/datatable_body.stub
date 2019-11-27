@@ -8,7 +8,7 @@
     @include('layouts.datatables_js')
     {!! $dataTable->scripts() !!}
 
-    // add by dandisy
+    <!-- add by dandisy -->
     <script>
         $('#dataTableBuilder thead').append('<tr class="column-search"></tr>');
         $('#dataTableBuilder thead th').each(function() {
