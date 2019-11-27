@@ -10,6 +10,18 @@ Installation steps are located [here](http://labs.infyom.com/laravelgenerator/do
 Note :
 for more generic if any artisan command use generate instead infyom
 
+### Installation
+
+    composer require dandisy/adminlte-templates
+
+    php artisan vendor:publish --provider="Webcore\AdminLTETemplates\AdminLTETemplatesServiceProvider" --tag="public"
+
+    php artisan vendor:publish --provider="Webcore\AdminLTETemplates\AdminLTETemplatesServiceProvider" --tag="views"
+
+    or
+
+    php artisan vendor:publish --provider="Webcore\AdminLTETemplates\AdminLTETemplatesServiceProvider" --tag="viewa-all"
+
 ### Usage (if this package is installed manually)
 
 0. unzip adminlte-templates.zip to vendor/dandisy

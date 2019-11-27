@@ -83,16 +83,18 @@
     </style>
 
     @yield('styles')
+    @yield('style')
+    @yield('css')
 </head>
 
-<body class="skin-red sidebar-mini">
+<body class="skin-blue sidebar-mini">
 @if (!Auth::guest())
     <div class="wrapper">
         <!-- Main Header -->
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="{{ url('/dashboard') }}" class="logo">
+            <a href="{{ url('/home') }}" class="logo">
                 <b>{{ isset($appName) ? $appName : 'Webcore' }}</b>
             </a>
 
@@ -177,7 +179,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer{{ (Request::is('dashboard*') or Request::is('stats*')) ? ' no-side-menu' : '' }}" style="max-height: 100px;text-align: center">
-            <strong>Copyright © 2017 <a href="#">Webcore</a>.</strong> All rights reserved.
+            <strong>Copyright © 2019 <a href="#">Webcore</a>.</strong> All rights reserved.
         </footer>
 
     </div>
@@ -365,12 +367,20 @@
                 }
             });
 
-            $(".date").datepicker({
-                format:	'yyyy-mm-dd'
+            // $(".date").datepicker({
+            //     format:	'yyyy-mm-dd'
+            // });
+
+            $(".date").datetimepicker({
+                format:	'YYYY-MM-DD'
             });
 
             $(".datetime").datetimepicker({
                 format:	'YYYY-MM-DDTHH:mm:ss.XZ'
+            });
+
+            $(".time").datetimepicker({
+                format:	'HH:mm:ss'
             });
 
             // $(".currency").inputmask({ alias : "currency", prefix: "", digits: 0 });
@@ -485,5 +495,7 @@
     </script>
 
     @yield('scripts')
+    @yield('script')
+    @yield('js')
 </body>
 </html>

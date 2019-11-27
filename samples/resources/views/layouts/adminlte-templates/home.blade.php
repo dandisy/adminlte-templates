@@ -9,7 +9,7 @@
         </div>
     </div>
     <h1>
-        Dashboard
+        Home
         <small>Menu</small>
     </h1>
     {{--<ol class="breadcrumb">
@@ -22,9 +22,9 @@
 <section class="content">
     <!-- Info boxes -->
     <div class="row">
-        @role(['superadministrator', 'administrator', 'user'])
+        <!-- {{--@role('superadministrator|administrator|user')--}} -->
         <div class="col-md-3 col-sm-6 col-xs-12">
-            <a class="info-box" href="{{ url('admin/pages') }}" style="display: block">
+            <a class="info-box" href="{{ url('Contents') }}" style="display: block">
                 <span class="info-box-icon bg-aqua"><i class="fa fa-edit"></i></span>
 
                 <div class="info-box-content">
@@ -36,25 +36,25 @@
             <!-- /.info-box -->
         </div>
         <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        {{--<div class="col-md-3 col-sm-6 col-xs-12">
             <a class="info-box" href="{{ url('assets') }}" style="display: block">
                 <span class="info-box-icon bg-red"><i class="fa fa-folder-open"></i></span>
 
                 <div class="info-box-content">
                     <span class="info-box-text">Assets</span>
-                    {{--<span class="info-box-number">41,410</span>--}}
+                    <span class="info-box-number">41,410</span>
                 </div>
                 <!-- /.info-box-content -->
             </a>
             <!-- /.info-box -->
         </div>
-        <!-- /.col -->
+        <!-- /.col -->--}}
 
         <!-- fix for small devices only -->
         <div class="clearfix visible-sm-block"></div>
-        @endrole
+        <!-- {{--@endrole--}} -->
 
-        @role(['superadministrator'])
+        <!-- {{--@role('superadministrator')--}} -->
         <div class="col-md-3 col-sm-6 col-xs-12">
             <a class="info-box" href="{{ url('users') }}" style="display: block">
                 <span class="info-box-icon bg-green"><i class="fa fa-users"></i></span>
@@ -68,8 +68,8 @@
             <!-- /.info-box -->
         </div>
         <!-- /.col -->
-        @endrole
-        @role(['superadministrator', 'administrator'])
+        <!-- {{--@endrole--}} -->
+        <!-- {{--@role('superadministrator|administrator')--}} -->
         <div class="col-md-3 col-sm-6 col-xs-12">
             <a class="info-box" href="{{ url('settings') }}" style="display: block">
                 <span class="info-box-icon bg-yellow"><i class="fa fa-cogs"></i></span>
@@ -92,7 +92,7 @@
                 <span class="info-box-icon bg-green"><i class="fa fa-area-chart"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Analytics</span>
+                    <span class="info-box-text">Reports</span>
                     {{--<span class="info-box-number">760</span>--}}
                 </div>
                 <!-- /.info-box-content -->
@@ -100,7 +100,7 @@
             <!-- /.info-box -->
         </div>
         <!-- /.col -->
-        @endrole
+        <!-- {{--@endrole--}} -->
     </div>
     <!-- /.row -->
 </section>

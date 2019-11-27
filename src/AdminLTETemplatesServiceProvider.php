@@ -16,18 +16,28 @@ class AdminLTETemplatesServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../views', 'adminlte-templates');
 
         /**
-         * Publish templates assets
+         * Publish templates's assets
          */
         $this->publishes([
-            __DIR__.'/public' => public_path(),
+            __DIR__.'/../samples/public' => public_path(),
         ], 'public');
 
         /**
-         * Publish templates views
+         * Publish all templates's views
          */
         $this->publishes([
-            __DIR__.'/views' => base_path('resources/views'),
+            __DIR__.'/../samples/resources/views/layouts' => base_path('resources/views/layouts'),
+            __DIR__.'/../samples/resources/views/vendor' => base_path('resources/views/vendor'),
+            __DIR__.'/../samples/resources/views/dashboard.blade.php' => base_path('resources/views'),
+            __DIR__.'/../samples/resources/views/home.blade.php' => base_path('resources/views'),
         ], 'views');
+
+        /**
+         * Publish all templates's views
+         */
+        $this->publishes([
+            __DIR__.'/../samples/resources/views' => base_path('resources/views'),
+        ], 'views-all');
     }
 
     /**

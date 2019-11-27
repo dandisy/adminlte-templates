@@ -11,7 +11,7 @@
             </div>
             <div class="pull-left info">
                 @if (Auth::guest())
-                <p>WebCORE</p>
+                <p>DS Webcore</p>
                 @else
                     <p>{{ Auth::user()->name}}</p>
                 @endif
