@@ -250,19 +250,3 @@
     </ul>
 </li>--}}
 
-<li class="{{ Request::is('categories*') ? 'active' : '' }} nav-item">
-    <a class="nav-link" href="{!! route('categories.index') !!}"><i data-feather="box"></i><span>Categories</span></a>
-</li>
-
-<li class="{{ Request::is('products*') ? 'active' : '' }} nav-item">
-    <a class="nav-link" href="{!! route('products.index') !!}"><i data-feather="aperture"></i><span>Products</span></a>
-</li>
-
-<li class="{{ Request::is('bids*') ? 'active' : '' }} nav-item">
-    <a class="nav-link" href="{!! route('bids.index') !!}"><i data-feather="coffee"></i><span>Bids</span></a>
-</li>
-
-<li class="{{ Request::is('histories*') ? 'active' : '' }} nav-item">
-    <a class="nav-link" href="{!! route('histories.index') !!}"><i data-feather="activity"></i><span>Histories</span></a>
-</li>
-
