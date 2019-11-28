@@ -28,8 +28,8 @@ class AdminLTETemplatesServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../samples/resources/views/layouts' => base_path('resources/views/layouts'),
             __DIR__.'/../samples/resources/views/vendor' => base_path('resources/views/vendor'),
-            __DIR__.'/../samples/resources/views/dashboard.blade.php' => base_path('resources/views'),
-            __DIR__.'/../samples/resources/views/home.blade.php' => base_path('resources/views'),
+            __DIR__.'/../samples/resources/views/dashboard.blade.php' => base_path('resources/views/dashboard.blade.php'),
+            __DIR__.'/../samples/resources/views/home.blade.php' => base_path('resources/views/home.blade.php'),
         ], 'views');
 
         /**
