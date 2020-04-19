@@ -19,88 +19,63 @@
 </section>
 
 <!-- Main content -->
-<section class="content">
+<section class="content main-menu-wrapper">
     <!-- Info boxes -->
     <div class="row">
         <!-- {{--@role('superadministrator|administrator|user')--}} -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <a class="info-box" href="{{ url('Contents') }}" style="display: block">
-                <span class="info-box-icon bg-aqua"><i class="fa fa-edit"></i></span>
-
-                <div class="info-box-content">
-                    <span class="info-box-text">Contents</span>
-                    {{--<span class="info-box-number">90<small>%</small></span>--}}
-                </div>
-                <!-- /.info-box-content -->
-            </a>
-            <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        {{--<div class="col-md-3 col-sm-6 col-xs-12">
-            <a class="info-box" href="{{ url('assets') }}" style="display: block">
-                <span class="info-box-icon bg-red"><i class="fa fa-folder-open"></i></span>
-
-                <div class="info-box-content">
-                    <span class="info-box-text">Assets</span>
-                    <span class="info-box-number">41,410</span>
-                </div>
-                <!-- /.info-box-content -->
-            </a>
-            <!-- /.info-box -->
-        </div>
-        <!-- /.col -->--}}
-
-        <!-- fix for small devices only -->
-        <div class="clearfix visible-sm-block"></div>
         <!-- {{--@endrole--}} -->
 
-        <!-- {{--@role('superadministrator')--}} -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <a class="info-box" href="{{ url('users') }}" style="display: block">
-                <span class="info-box-icon bg-green"><i class="fa fa-users"></i></span>
+        <div class="icon-menu-wrapper">
+            <div class="main-menu icon-menu">
+                <a class="info-box" href="{{ url('pages') }}" style="display: block">
+                    <span class="info-box-icon bg-aqua"><i class="fa fa-edit"></i></span>
 
-                <div class="info-box-content">
-                    <span class="info-box-text">Users</span>
-                    {{--<span class="info-box-number">760</span>--}}
-                </div>
-                <!-- /.info-box-content -->
-            </a>
-            <!-- /.info-box -->
+                    <div class="text-center">Content Management</div>
+                    <!-- /.info-box-content -->
+                </a>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
         </div>
-        <!-- /.col -->
-        <!-- {{--@endrole--}} -->
-        <!-- {{--@role('superadministrator|administrator')--}} -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <a class="info-box" href="{{ url('settings') }}" style="display: block">
-                <span class="info-box-icon bg-yellow"><i class="fa fa-cogs"></i></span>
 
-                <div class="info-box-content">
-                    <span class="info-box-text">Configuration</span>
-                    {{--<span class="info-box-number">2,000</span>--}}
-                </div>
-                <!-- /.info-box-content -->
-            </a>
-            <!-- /.info-box -->
+        <div class="clearfix"></div>
+        <hr>
+
+        <div class="icon-menu-wrapper">     
+            <div class="main-menu icon-menu">
+                <a class="info-box" href="{{ url('assets') }}" style="display: block">
+                    <span class="info-box-icon bg-blue"><i class="fa fa-folder-open"></i></span>
+
+                    <div class="text-center">Asset Management</div>
+                    <!-- /.info-box-content -->
+                </a>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
         </div>
-        <!-- /.col -->
-
-        <!-- fix for small devices only -->
-        <div class="clearfix visible-sm-block"></div>
-
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <a class="info-box" href="{{ url('analytics') }}" style="display: block">
-                <span class="info-box-icon bg-green"><i class="fa fa-area-chart"></i></span>
-
-                <div class="info-box-content">
-                    <span class="info-box-text">Reports</span>
-                    {{--<span class="info-box-number">760</span>--}}
-                </div>
-                <!-- /.info-box-content -->
-            </a>
-            <!-- /.info-box -->
+        
+        <div class="icon-menu-wrapper">
+            <div class="main-menu icon-menu">
+                <a class="info-box" href="{{ url('settings') }}" style="display: block">
+                    <span class="info-box-icon bg-orange"><i class="fa fa-cog"></i></span>
+                    
+                    <div class="text-center">System Configuration</div>
+                    <!-- /.info-box-content -->
+                </a>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="main-menu icon-menu">
+                <a class="info-box" href="{{ url('users') }}" style="display: block">
+                    <span class="info-box-icon bg-orange"><i class="fa fa-user"></i></span>
+                    
+                    <div class="text-center">Account Management</div>
+                    <!-- /.info-box-content -->
+                </a>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
         </div>
-        <!-- /.col -->
-        <!-- {{--@endrole--}} -->
     </div>
     <!-- /.row -->
 </section>

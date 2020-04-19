@@ -90,7 +90,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    {{ isset($appName) ? $appName : 'Webcore' }}
+                    <!-- {{ isset($appName) ? $appName : 'Webcore' }} -->
+                    <img src="{{ asset('webcore-logo.png') }}" alt="Webcore" width="325">
                 </div>
 
                 <div class="links">

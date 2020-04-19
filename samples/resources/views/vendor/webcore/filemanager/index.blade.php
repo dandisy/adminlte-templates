@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('styles')
+    <!-- added by dandisy -->
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins//font-awesome/css/font-awesome.min.css') }}">
+    <!-- end added by dandisy -->
+
     <link rel="stylesheet" href="https://cdn.plyr.io/1.5.18/plyr.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <link rel="stylesheet" href="{{ asset('/vendor/filemanager/vendor/dmuploader/css/uploader.css') }}">
@@ -9,6 +14,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.0.0/pnotify.brighttheme.min.css">
     <link rel="stylesheet" href="{{ asset('/vendor/filemanager/vendor/contextMenu/dist/jquery.contextMenu.css') }}">
     <link rel="stylesheet" href="{{ asset('/vendor/filemanager/vendor/highlight/styles/agate.css') }}">
+
+    <style>
+        .navbar > .container, .navbar > .container-fluid {
+            display: block;
+        }
+        .navbar-nav {
+            display: block;
+        }
+    </style>
 @endsection
 
 @section('contents')
@@ -40,9 +54,12 @@
                             <li><button class="btn btn-info btn-cons" data-toggle="modal" data-target="#modalCreateFolder"><i class="fa fa-folder"></i> Create Folder</button></li>
                             <li class="home"><button class="btn btn-default"><i class="fa fa-home"></i></button></li>
                             <li class="refresh"><button class="btn btn-default"><i class="fa fa-refresh"></i></button></li>
-                            <li class="move"><button class="btn btn-default"><i class="fa fa-arrows"></i> Move</button></li>
+                            <!-- <li class="move"><button class="btn btn-default"><i class="fa fa-arrows"></i> Move</button></li>
                             <li class="delete"><button class="btn btn-default"><i class="fa fa-trash"></i> Delete</button></li>
-                            <li class="preview"><button class="btn btn-default"><i class="fa fa-eye"></i> Preview</button></li>
+                            <li class="preview"><button class="btn btn-default"><i class="fa fa-eye"></i> Preview</button></li> -->
+                            <li class="move"><button class="btn btn-default"><i class="fa fa-arrows"></i></button></li>
+                            <li class="delete"><button class="btn btn-default"><i class="fa fa-trash"></i></button></li>
+                            <li class="preview"><button class="btn btn-default"><i class="fa fa-eye"></i></button></li>
                             <li class="find">
                                 <div class="navbar-form navbar-left navbar-input-group">
                                     <div class="input-group form-search">
