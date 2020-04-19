@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('contents')
+@section('contents')    
     <section class="content-header">
         <h1 class="pull-left">$MODEL_NAME_PLURAL_HUMAN$</h1>
         <h1 class="pull-right">
