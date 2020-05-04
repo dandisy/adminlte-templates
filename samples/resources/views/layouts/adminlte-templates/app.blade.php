@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ isset($appName) ? $appName : 'Webcore' }}</title>
+    <title>{{ isset($appName) ? $appName : 'Gamify - Community' }}</title>
 
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins//font-awesome/css/font-awesome.min.css') }}">
@@ -24,11 +22,11 @@
     <!-- Tags Input -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}">
 
-    <!-- Date Time Picker -->
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datetimepicker/css/bootstrap-datetimepicker.css') }}">
-
     <!-- include Summernote -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/summernote/summernote.css') }}">
+
+    <!-- Date Time Picker -->
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datetimepicker/css/bootstrap-datetimepicker.css') }}">
 
     <!-- include Fancybox -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/fancybox/jquery.fancybox.min.css') }}">
@@ -40,13 +38,6 @@
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/multi-select/css/multi-select.css') }}">
 
     <style>
-        body.sidebar-collapse .logo img.logo-full {
-            display: none;
-        }
-        body:not(.sidebar-collapse) .logo img.logo-core {
-            display: none;
-        }
-
         .main-header {
             position: fixed;
             width: 100%;
@@ -77,7 +68,7 @@
             border-radius: 0;
         }
         #image-thumb {
-            margin-bottom: 2px;
+            margin-bottom: 10px;
             border: 1px solid #ddd;
         }
         .pagination a, .pagination span {
@@ -190,14 +181,12 @@
 
             <!-- Logo -->
             <a href="{{ url('/home') }}" class="logo">
-                <!-- <b>{{ isset($appName) ? $appName : 'Webcore' }}</b> -->
-                <img class="logo-full" src="{{ asset('webcore-logo.png') }}" alt="logo" width="120">
-                <img class="logo-core" src="{{ asset('webcore-logo-core.png') }}" alt="logo" width="20">
+                <b>{{ isset($appName) ? $appName : 'Gamify' }}</b>
             </a>
 
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">
-                @if(!Request::is('dashboard*') and !Request::is('stats*') and !Request::is('home*') and !Request::is('assets*'))
+                @if(!Request::is('dashboard*') and !Request::is('stats*') and !Request::is('home*'))
                 <!-- Sidebar toggle button-->
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                     <span class="sr-only">Toggle navigation</span>
@@ -211,12 +200,23 @@
                         <li><a href="{{ url('home') }}">Home</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="{{ url('dashboard') }}">Dashboard</a></li>
+                        <li><a href="{{ url('boards') }}">Monitor</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="{{ url('pages') }}">Content Editor</a></li>
+                        <li><a href="{{ url('pages') }}">Content</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="{{ url('assets') }}">Assets Manager</a></li>
-                        <li><a href="{{ url('settings') }}">System Configuration</a></li>
-                        <li><a href="{{ url('users') }}">Account Manager</a></li>
+                        <li><a href="{{ url('categories') }}">Line</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ url('metrics') }}">Unit</a></li>
+                        <li><a href="{{ url('quests') }}">Action</a></li>
+                        <li><a href="{{ url('challenges') }}">Achivement</a></li>
+                        <li><a href="{{ url('conditions') }}">Boundary</a></li>
+                        <li><a href="{{ url('rules') }}">Process</a></li>
+                        <li><a href="{{ url('preferences') }}">Record</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ url('communities') }}">Social</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ url('settings') }}">System</a></li>
+                        <li><a href="{{ url('users') }}">Account</a></li>
                     </ul>
                 </div>
                 <!-- Navbar Right Menu -->
@@ -227,26 +227,26 @@
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                {{--@if(isset(Auth::user()->with('profile')->find(Auth::user()->id)->profile->image))
+                                @if(isset(Auth::user()->with('profile')->find(Auth::user()->id)->profile->image))
                                 <img src="{{ Auth::user()->with('profile')->find(Auth::user()->id)->profile->image }}"
                                      class="user-image" alt="User Image"/>
-                                @else--}}
+                                @else                                
                                 <img src="{{ asset('vendor/adminlte/dist/img/user2-160x160.jpg') }}"
                                     class="user-image" alt="User Image"/>
-                                {{--@endif--}}
+                                @endif
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs">{!! Auth::user()->name !!}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    {{--@if(isset(Auth::user()->with('profile')->find(Auth::user()->id)->profile->image))
+                                    @if(isset(Auth::user()->with('profile')->find(Auth::user()->id)->profile->image))
                                     <img src="{{ Auth::user()->with('profile')->find(Auth::user()->id)->profile->image }}"
                                          class="img-circle" alt="User Image"/>
-                                    @else--}}
+                                    @else                                
                                     <img src="{{ asset('vendor/adminlte/dist/img/user2-160x160.jpg') }}"
                                         class="img-circle" alt="User Image"/>
-                                    {{--@endif--}}
+                                    @endif
                                     <p>
                                         {!! Auth::user()->name !!}
                                         <small>Member since {!! Auth::user()->created_at->format('M. Y') !!}</small>
@@ -275,11 +275,11 @@
         </header>
 
         <!-- Left side column. contains the logo and sidebar -->
-        @if(!Request::is('dashboard*') and !Request::is('stats*') and !Request::is('home*') and !Request::is('assets*'))
+        @if(!Request::is('dashboard*') and !Request::is('stats*') and !Request::is('home*'))
         @include('layouts.adminlte-templates.sidebar')
         @endif
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper{{ (Request::is('dashboard*') or Request::is('stats*') or Request::is('home*') or Request::is('assets*')) ? ' no-side-menu' : '' }}">
+        <div class="content-wrapper{{ (Request::is('dashboard*') or Request::is('stats*') or Request::is('home*')) ? ' no-side-menu' : '' }}">
             @yield('contents')
         </div>
 
@@ -291,7 +291,7 @@
         </div>
 
         <!-- Main Footer -->
-        <footer class="main-footer{{ (Request::is('dashboard*') or Request::is('stats*') or Request::is('home*') or Request::is('assets*')) ? ' no-side-menu' : '' }}" style="max-height: 100px;text-align: center">
+        <footer class="main-footer{{ (Request::is('dashboard*') or Request::is('stats*') or Request::is('home*')) ? ' no-side-menu' : '' }}" style="max-height: 100px;text-align: center">
             <strong>Copyright © 2019 <a href="#">Redtech</a>.</strong> All rights reserved.
         </footer>
 
@@ -386,24 +386,6 @@
     <script src="{{ asset('vendor/adminlte/dist/js/app.min.js') }}"></script>
 
     <script>
-        // filemanager auto run when close fancybox, after select file and then insert image thumbnail
-        var OnMessage = function(data){
-            if(data.appendId == 'album') {
-                $('#' + data.appendId + '-thumb').append('' +
-                '<div class="file-item">' +
-                '<div class="col-md-3 col-sm-3 col-xs-3"><img src="' + data.thumb + '" style="width:100%"></div>' +
-                '<div class="col-md-8" col-sm-8 col-xs-8" style="overflow-x:auto">' + data.thumb + '</div>' +
-                '<div class="col-md-1" col-sm-1 col-xs-1"><span class="fa fa-trash" style="cursor:pointer;color:red"></span></div>' +
-                '<div class="clearfix"></div>' +
-                '<input type="hidden" name="files[]" value="' + data.thumb + '" />' +
-                '</div>');
-            } else {
-                $('#' + data.appendId + '-thumb').html('<img src="' + data.thumb + '" style="width:100%">');
-            }
-            $('input[name="' + data.appendId + '"]').val(data.thumb);
-            $.fancybox.close();
-        };
-
         $(document).ready(function() {
             // start summernote
             var snfmContext;
@@ -454,55 +436,17 @@
             });
             // end summernote
 
+            $('#dataTableBuilder').wrap('<div class="table-responsive col-md-12"></div>');
+
             $('.filemanager').fancybox({
                 type : 'iframe'
             });
 
-            $('#filer_input').fileuploader({
-                enableApi: true,
-                maxSize: 10,
-                extensions: ["jpg", "png", "jpeg"],
-                captions: {
-                    feedback: 'Upload foto',
-                    button: '+ Foto Album'
-                },
-                showThumbs: true,
-                addMore: true,
-                allowDuplicates: false,
-                onRemove: function (data, el) {
-                    albumDeleted.push(data.data.album);
-                }
-            });
-
-            $(document).on('click', '.file-item .fa-trash', function() {
-                $(this).parents('.file-item').remove();
-                $('#album-thumb').append('<input type="hidden" name="deleteFiles[]" value="' + $(this).data('identity') + '" />');
-            });
-
-            $('.album-manager').on('click', 'button', function(e) {
-                e.preventDefault();
-
-                $('#album-thumb').append('' +
-                '<div class="file-item">' +
-                '<div class="col-md-3 col-sm-3 col-xs-3"><img src="http://img.youtube.com/vi/' + $('#album').val() + '/mqdefault.jpg" style="width:100%"></div>' +
-                '<div class="col-md-8" col-sm-8 col-xs-8" style="overflow-x:auto">' + $('#album').val() + '</div>' +
-                '<div class="col-md-1" col-sm-1 col-xs-1"><span class="fa fa-trash" style="cursor:pointer;color:red"></span></div>' +
-                '<div class="clearfix"></div>' +
-                '<input type="hidden" name="files[]" value="' + $('#album').val() + '" />' +
-                '</div>');
-
-                $('#album').val('');
-            });
-
-            ////////
-
-            $('#dataTableBuilder').wrap('<div class="table-responsive col-md-12"></div>');
+            $(".select2").select2();
 
             $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                 $('.select2').select2();
             });
-
-            $(".select2").select2();
 
             $(".multi-select").multiSelect({
                 selectableHeader: "<input type='text' class='search-input form-control' autocomplete='off' placeholder='Search...'>",
@@ -558,9 +502,46 @@
 
             // $(".currency").inputmask({ alias : "currency", prefix: "", digits: 0 });
 
+            $('#filer_input').fileuploader({
+                enableApi: true,
+                maxSize: 10,
+                extensions: ["jpg", "png", "jpeg"],
+                captions: {
+                    feedback: 'Upload foto',
+                    button: '+ Foto Album'
+                },
+                showThumbs: true,
+                addMore: true,
+                allowDuplicates: false,
+                onRemove: function (data, el) {
+                    albumDeleted.push(data.data.album);
+                }
+            });
+
+            $(document).on('click', '.file-item .fa-trash', function() {
+                $(this).parents('.file-item').remove();
+                $('#album-thumb').append('<input type="hidden" name="deleteFiles[]" value="' + $(this).data('identity') + '" />');
+            });
+
             $(document).on('change', 'input[name="title"]', function() {
                 $('input[name="slug"]').val(stringToSlug($(this).val()));
             });
+
+            $('.album-manager').on('click', 'button', function(e) {
+                e.preventDefault();
+
+                $('#album-thumb').append('' +
+                '<div class="file-item">' +
+                '<div class="col-md-3 col-sm-3 col-xs-3"><img src="http://img.youtube.com/vi/' + $('#album').val() + '/mqdefault.jpg" style="width:100%"></div>' +
+                '<div class="col-md-8" col-sm-8 col-xs-8" style="overflow-x:auto">' + $('#album').val() + '</div>' +
+                '<div class="col-md-1" col-sm-1 col-xs-1"><span class="fa fa-trash" style="cursor:pointer;color:red"></span></div>' +
+                '<div class="clearfix"></div>' +
+                '<input type="hidden" name="files[]" value="' + $('#album').val() + '" />' +
+                '</div>');
+
+                $('#album').val('');
+            });
+
             var stringToSlug = function (str) {
                 str = str.replace(/^\s+|\s+$/g, ''); // trim
                 str = str.toLowerCase();
@@ -580,6 +561,24 @@
                 return str;
             }
         });
+
+        // filemanager auto run when close fancybox, after select file and then insert image thumbnail
+        var OnMessage = function(data){
+            if(data.appendId == 'album') {
+                $('#' + data.appendId + '-thumb').append('' +
+                '<div class="file-item">' +
+                '<div class="col-md-3 col-sm-3 col-xs-3"><img src="' + data.thumb + '" style="width:100%"></div>' +
+                '<div class="col-md-8" col-sm-8 col-xs-8" style="overflow-x:auto">' + data.thumb + '</div>' +
+                '<div class="col-md-1" col-sm-1 col-xs-1"><span class="fa fa-trash" style="cursor:pointer;color:red"></span></div>' +
+                '<div class="clearfix"></div>' +
+                '<input type="hidden" name="files[]" value="' + data.thumb + '" />' +
+                '</div>');
+            } else {
+                $('#' + data.appendId + '-thumb').html('<img src="' + data.thumb + '" style="width:100%">');
+            }
+            $('input[name="' + data.appendId + '"]').val(data.thumb);
+            $.fancybox.close();
+        };
 
         $('#myModalPermissions').on('show.bs.modal', function (e) {
             var content = '';
